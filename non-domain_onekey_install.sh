@@ -111,21 +111,21 @@ check_domain(){
     green "========================="
     read your_domain
     real_addr=`curl ipv4.icanhazip.com`
-    if [ $real_addr == $your_domain ] ; then
-        green "============================="
-        green "IP检测正常，开始安装爬虫"
-        green "============================="
-        sleep 1s
-        download_pc   
-        install_nginx
-        config_ssl
-    else
-        red "================================="
-        red "输入的IP与本VPS IP地址不一致"
-        red "本次安装失败，请确保IP正常"
-        red "================================="
-        exit 1
-    fi
+    #if [ $real_addr == $your_domain ] ; then
+    green "============================="
+    green "IP检测正常，开始安装爬虫"
+    green "============================="
+    sleep 1s
+    download_pc   
+    install_nginx
+    config_ssl
+    #else
+       # red "================================="
+       # red "输入的IP与本VPS IP地址不一致"
+       # red "本次安装失败，请确保IP正常"
+       # red "================================="
+       # exit 1
+    #fi
 }
 
 
